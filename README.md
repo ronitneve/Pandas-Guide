@@ -219,6 +219,11 @@ Y          77.5  75.0     80.0
 Z          75.0  80.0     40.0
 ```
 
+Trick to agg string values from col2 using col1 values as a condition
+```
+df2 = pd.DataFrame(df.groupby("Col1")['col2'].transform(lambda x: ','.join(x)).drop_duplicates())
+```
+
 ## Concat and Merge DataFrame
 
 pd.concat()
